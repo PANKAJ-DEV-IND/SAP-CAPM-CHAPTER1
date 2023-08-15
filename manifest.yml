@@ -1,0 +1,17 @@
+---
+applications:
+
+- name: hdiconf5
+  path: ./gen/db
+  no-route: true
+  health-check-type: process
+  memory: 256M
+  services:
+    - somehdi2
+
+- name: newcapm5
+  path: .
+  memory: 256M
+  random-route: true
+  services:
+    - somehdi2  

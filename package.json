@@ -1,0 +1,35 @@
+{
+  "name": "demo1",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "ISC",
+  "dependencies": {
+    "@sap/cds": "^7.1.1",
+    "@sap/xssec": "^3.3.3",
+    "express": "^4",
+    "hdb": "^0.19.5",
+    "passport": "^0.6.0"
+  },
+  "engines": {
+    "node": "^18.13.0"
+  },
+  "scripts": {
+    "update-deps": "npm update",
+    "build": "cds build/all --clean",
+    "deploy": "cds deploy",
+    "start": "cds-serve"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "hana",
+        "model": [
+          "db/",
+          "srv/",
+          "app/"
+        ]
+      }
+    }
+  }
+}
